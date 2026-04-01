@@ -18,18 +18,6 @@ class ListaDuplamente:
                 aux = aux.proximo
         print("------------------------------")
 
-    def imprimirReverso(self):
-        print("------------------------------")
-        print("Lista Duplamente Encadeada por ordem alfabética REVERSA:")
-        if self.inicio is None:
-            print("Lista vazia!!!")
-        else:
-            aux = self.fim
-            while aux:
-                print(aux.dado)
-                aux = aux.anterior
-        print("------------------------------")
-
     def add(self, valor):
         nodo = No(valor)
         if self.inicio is None:     # se a lista estiver vazia

@@ -8,5 +8,3 @@ lista.add("João")
 lista.add("Benjamin")
 lista.add("Rafaela")
 lista.add("Júlia")
-
-lista.imprimirReverso()
