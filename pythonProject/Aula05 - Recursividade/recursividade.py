@@ -1,3 +1,16 @@
+"""Exemplo de recursividade em português estruturado:
+   função  somarAté(N):
+        se N = 0, então:
+            retorna 0;
+        senão:
+            retorna N + somarAté(N-1).
+
+    função fatorial(N):
+        se N = 0, então:
+            retorna 1;
+        senão:
+            retorna N * fatorial(N-1).
+"""
 def somarAte(n):
     if n == 1:
         return 1
