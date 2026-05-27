@@ -1,4 +1,5 @@
 from No import No
+from Fila import Fila
 
 class Arvore:
     def __init__(self):
@@ -18,14 +19,44 @@ class Arvore:
             raiz.dir = self.inserir(raiz.dir, valor)
         return raiz
 
-    def imprimir(self, raiz : No):
+    def imprimirEmOrdem(self, raiz : No):
         if raiz is not None:
-            self.imprimir(raiz.esq)
+            self.imprimirEmOrdem(raiz.esq)
             print(raiz.dado, end = " - ")
-            self.imprimir(raiz.dir)
+            self.imprimirEmOrdem(raiz.dir)
 
     def imprimirPreOrdem(self, raiz : No):
         if raiz is not None:
             print(raiz.dado, end = " - ")
-            self.imprimir(raiz.esq)
-            self.imprimir(raiz.dir)
+            self.imprimirPreOrdem(raiz.esq)
+            self.imprimirPreOrdem(raiz.dir)
+
+    def imprimirPosOrdem(self, raiz: No):
+        if raiz is not None:
+            self.imprimirPosOrdem(raiz.esq)
+            self.imprimirPosOrdem(raiz.dir)
+            print(raiz.dado, end=" - ")
+
+    def imprimirReverso(self, raiz: No):
+        if raiz is not None:
+            self.imprimirReverso(raiz.dir)
+            print(raiz.dado, end=" - ")
+            self.imprimirReverso(raiz.esq)
+
+    def imprimirEmNivel(self, raiz: No): # não usa recursividade
+        if raiz == None:
+            return
+        fila = Fila()
+        fila.add(raiz)
+        while fila.inicio != None:
+            tamanho = fila.tamanho
+            for _ in range(tamanho):
+                atual = fila.remover()
+                print(atual.dado, end=" - ")
+
+                if atual.esq != None:
+                    fila.add(atual.esq)
+                if atual.dir != None:
+                    fila.add(atual.dir)
+
+            print("")
