@@ -1,0 +1,6 @@
+Construa um algoritmo de busca contendo um vetor de números inteiros de 20 posições:
+• O algoritmo deve ter duas funções, uma para busca sequencial e
+outra para busca binária;
+• Coloque um contador em cada função para contar as iterações de cada função;
+• Peça ao usuário que informe o valor que deseja procurar;
+• Então informe ao usuário se este valor existe no vetor e quantas iterações foram necessárias em cada função.
